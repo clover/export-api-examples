@@ -31,10 +31,10 @@ Sandbox does not have this limitation.
 How to use
 ------------
 You will do the POST call to /v3/merchants/{merchant_Id}/exports with the appropriate payload.
-The payload includes:
-  export_type (Orders or Payments)
-  start_time (in UTC)
-  end_time (in UTC)
+The payload includes:  
+  export_type (Orders or Payments)  
+  start_time (in UTC)  
+  end_time (in UTC)  
   ```
     {
         'type': export_type,
