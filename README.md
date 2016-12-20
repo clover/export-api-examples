@@ -26,6 +26,8 @@ Sandbox does not have this limitation.
 -The max time range is 30 days. So if you want spans of data longer than that, you'll need to send a few requests.
 
 
+- The server can only handle a few concurrent exports at a time You will need to wait for each export to finish before starting another one. The server will throw 503s when the concurrency threshold is reached.
+
 
 
 How to use
