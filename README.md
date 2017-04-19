@@ -34,7 +34,7 @@ How to use
 ------------
 You will do the POST call to /v3/merchants/{merchant_Id}/exports with the appropriate payload.
 The payload includes:  
-  export_type (PAYMENTS, ORDERS, or PAYMENT_SUMMARIES)  
+  export_type (PAYMENTS or ORDERS)  
   start_time (in UTC)  
   end_time (in UTC)  
   ```
