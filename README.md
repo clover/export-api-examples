@@ -13,8 +13,11 @@ This endpoint will allow you to get bulk payment and order data from merchants t
 Usage Notes
 ------------
 - Availability of the service:
-UTC: MON-FRI 08:00-12:00, SAT 09:00-12:00, SUN 09:00-13:00, otherwise we return a 503 with availability hours. 
-Sandbox does not have this limitation.
+    - US (https://api.clover.com) UTC: MON-FRI 08:00-12:00, SAT 09:00-12:00, SUN 09:00-13:00
+    - EU (https://api.eu.clover.com) UTC: MON-FRI 01:00-05:00, SAT 02:00-05:00, SUN 02:00-06:00
+    - Sandbox (https://apisandbox.dev.clover.com) is not limited to certain times.
+
+  Outside of these times, we return a 503 with availability hours.  
 
 
 - 1000 objects per file returned. If your response is more than 1000 objects we'll return an array of files to capture.
