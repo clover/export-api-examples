@@ -14,11 +14,11 @@ Usage Notes
 ------------
 - Availability of the service:
 
-    - US (https://api.clover.com) UTC: MON-FRI 08:00-12:00, SAT 09:00-12:00, SUN 09:00-13:00
+    - US (https://api.clover.com) UTC: MON-FRI 10:00-13:00, SAT 10:00-13:00, SUN 10:00-13:00
     - EU (https://api.eu.clover.com) UTC: MON-FRI 01:00-05:00, SAT 02:00-05:00, SUN 02:00-06:00
     - Sandbox (https://apisandbox.dev.clover.com) is not limited to certain times.
 
-  Outside of these times, we return a 503 with availability hours.  
+  Outside of these times, we return a 503 with available hours. 
 
 
 
