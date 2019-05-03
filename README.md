@@ -1,17 +1,20 @@
-BETA
-==========
-###****This endpoint is currently in beta. It is subject to change without notice.****
+# Merchant Data Export API Example (beta)
 
+### This endpoint is currently in beta. It is subject to change without notice.
 
+## Requirements
 
+* Python 3.7.3 (**not** backwards compatible with 2.7)
+* pip
+* [Sandbox Clover developer account](https://sandbox.dev.clover.com/developers)
 
-Purpose
-------------
+## Purpose
+
 This endpoint will allow you to get bulk payment and order data from merchants that have installed your app. This service is not real-time, but will significantly reduce your chances of hitting an API limit restriction. Developers that require order and payment histories on merchants should integrate this service into their data collecting implementation.
 
 
-Usage Notes
-------------
+## Usage Notes
+
 - Availability of the service:
 
     - US (https://api.clover.com) UTC: MON-FRI 10:00-13:00, SAT 10:00-13:00, SUN 10:00-13:00
@@ -35,13 +38,14 @@ Usage Notes
 
 
 
-How to use
-------------
-You will do the POST call to /v3/merchants/{merchant_Id}/exports with the appropriate payload.
+## How to use
+
+You will do the POST call to `/v3/merchants/{merchant_Id}/exports` with the appropriate payload.
+
 The payload includes:  
-  export_type (PAYMENTS or ORDERS)  
-  start_time (in UTC)  
-  end_time (in UTC)  
+  - `export_type` (PAYMENTS or ORDERS)
+  - `start_time` (in UTC)
+  - `end_time` (in UTC) 
   ```
     {
         "type": export_type,
@@ -69,13 +73,13 @@ The response of the exports object will include the export id for you to use.
 ```
 
 
-Once the call has been made, you will occasionally do a GET call to /v3/merchants/{merchant_Id}/exports/{export_Id} to check the status and percent complete.
+Once the call has been made, you will occasionally do a GET call to `/v3/merchants/{merchant_Id}/exports/{export_Id}` to check the status and percent complete.
 
 
 STATUS:
-PENDING - In queue to be processed  
-IN_PROGRESS - Being processed  
-DONE - Process complete
+- `PENDING` - In queue to be processed  
+- `IN_PROGRESS` - Being processed  
+- `DONE` - Process complete
 
 
 ```
