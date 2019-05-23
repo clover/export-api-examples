@@ -4,7 +4,7 @@
 
 ## Requirements
 
-* Python 3.7.3 (**not** backwards compatible with 2.7)
+* Python 3.7.3 (backwards compatible with 2.7)
 * pip
 * [Sandbox Clover developer account](https://sandbox.dev.clover.com/developers)
 
