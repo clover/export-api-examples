@@ -124,14 +124,14 @@ def download_exported_data(export_urls):
         # In a real application, we would commit this data to some persistent
         # data store.
         count = len(downloaded)
-        print(f"Downloaded: {count}")
+        print("Downloaded: {}".format(count))
 
     print("")
 
 
 def api_url(resource_path):
     """Generate the URL for an API call"""
-    return f"{HOST}{resource_path}?access_token={ACCESS_TOKEN}"
+    return "{}{}?access_token={}".format(HOST, resource_path, ACCESS_TOKEN)
 
 
 def print_export(export, label):
@@ -141,14 +141,14 @@ def print_export(export, label):
     print("-" * len(label))
     for k, v in export.items():
         if k != "exportUrls":
-            print(f"{k}: {v}")
+            print("{}: {}".format(k, v))
     print("")
 
 
 def print_export_status(export, finished=False):
     """Pretty print the export status"""
     spinner = "" if finished else next(SPINNER)
-    print(f"({export['percentComplete']}%) Export is {export['status']}. {spinner}")
+    print("({}%) Export is {}. {}".format(export['percentComplete'], export['status'], spinner))
     sys.stdout.flush()
 
 
