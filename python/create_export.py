@@ -9,7 +9,7 @@ Update these configuration variables defined in the script body:
 - HOST: The target API host
 - MERCHANT_ID: The Clover ID of the merchant whose data you want to export
 - ACCESS_TOKEN: A valid API token with access to the target merchant
-- EXPORT_TYPE: The type of data to export ('ORDERS' or 'PAYMNENTS')
+- EXPORT_TYPE: The type of data to export ('ORDERS' or 'PAYMENTS')
 - START_TIME: The start (lower-bound) of the export time window
 - END_TIME: The end (upper-bound) of the export time window
 
