@@ -34,7 +34,7 @@ END_TIME =     "1556582400000"  # 04/30/2019 @ 12:00am (UTC)
 
 # -- End Script Configuration --
 
-
+HEADERS = {"Authorization": "Bearer {}".format(ACCESS_TOKEN)}
 SPINNER = itertools.cycle(["|", "/", "-", "\\"])
 
 
@@ -61,14 +61,14 @@ def main():
 
 def create_export(export_type, start_time, end_time):
     """Request a new export"""
-    url = api_url("/v3/merchants/" + MERCHANT_ID + "/exports/")
+    url = HOST + "/v3/merchants/" + MERCHANT_ID + "/exports/"
 
     payload = {
         "type": export_type,
         "startTime": start_time,
         "endTime": end_time,
     }
-    resp = requests.post(url, json=payload)
+    resp = requests.post(url, json=payload, headers=HEADERS)
     resp.raise_for_status()
 
     return resp.json()
@@ -76,9 +76,9 @@ def create_export(export_type, start_time, end_time):
 
 def get_export(export_id):
     """Get the current state of the specified export"""
-    url = api_url("/v3/merchants/" + MERCHANT_ID + "/exports/" + export_id)
+    url = HOST + "/v3/merchants/" + MERCHANT_ID + "/exports/" + export_id
 
-    resp = requests.get(url)
+    resp = requests.get(url, headers=HEADERS)
     resp.raise_for_status()
 
     return resp.json()
@@ -127,11 +127,6 @@ def download_exported_data(export_urls):
         print("Downloaded: {}".format(count))
 
     print("")
-
-
-def api_url(resource_path):
-    """Generate the URL for an API call"""
-    return "{}{}?access_token={}".format(HOST, resource_path, ACCESS_TOKEN)
 
 
 def print_export(export, label):
